@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>One line bbs</title>
+  </head>
+  <body>
+    <h1>One line bbs</h1>
+    <form action="/" method="POST">
+      <input type="text" name="name" size="10">
+      <input type="text" name="message" size="20">
+      <input type="submit" value="Post">
+    </form>
+    <hr>
+    <% $data.reverse.each do |m| %>
+      <%= m[:name].escape_html %>: <%= m[:message].escape_html %> | <%= m[:date].inspect.escape_html %><br>
+    <% end %>
+  </body>
+</html>
